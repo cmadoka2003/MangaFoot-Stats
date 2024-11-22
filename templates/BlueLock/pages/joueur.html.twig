@@ -1,0 +1,50 @@
+{% extends 'BlueLock/layout.html.twig' %}
+
+{% block title %}
+	BlueLock - Joueurs | MangaFoot Stats
+{% endblock %}
+
+{% block meta %}
+	<meta name="description" content="Joueurs">
+{% endblock %}
+
+{% block js %}
+	<script src={{ asset('js/button.js') }} defer></script>
+{% endblock %}
+
+{% block body %}
+	<section class="player-container p-7 bg-white">
+		<div class="w-full flex items-center justify-center">
+			<div class="w-full max-w-[1440px] mb-7">
+				<h1 class="text-5xl">Joueurs</h1>
+			</div>
+		</div>
+
+		<div class="w-full flex items-center justify-center">
+			<div class="w-full max-w-[1440px] mb-7">
+				<form action="" method="GET" class="flex flex-row max-md:flex-col max-md:justify-center max-md:items-center">
+					<input type="text" class="w-[500px] h-10 border-2 border-black max-md:w-[300px]" name="player" id="player" placeholder="rechercher un joueur">
+					<button type="submit" class="bg-[#001B3D] text-white px-20 py-2 max-md:w-[300px]">Rechercher</button>
+				</form>
+			</div>
+		</div>
+
+		<div class="item-container flex items-center justify-center">
+			<div class="flex flex-row flex-wrap justify-center items-center w-full max-w-[1440px]">
+				{% for i in 1..player %}
+					<a class="px-1 py-6" href="/bluelock/joueurs/details">
+						<div class="player-item flex flex-col items-center justify-center w-[190px] h-[285px] bg-[#D9D9D9] rounded-3xl text-black">
+							<div class="w-[150px] h-[150px] overflow-hidden rounded-full">
+								<img class="w-full h-full object-cover" src="{{ asset('img/isagi.jpg') }}" alt="Isagi Yoichi">
+							</div>
+							<p class="mt-4 font-bold">Isagi</p>
+							<p class="text-gray-500">Yoichi</p>
+						</div>
+					</a> 
+				{% endfor %}
+			</div>
+		</div>
+
+
+	</section>
+{% endblock %}

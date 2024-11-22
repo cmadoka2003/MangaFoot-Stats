@@ -1,0 +1,41 @@
+{% extends 'BlueLock/layout.html.twig' %}
+
+{% block title %}
+	BlueLock - Statistiques | MangaFoot Stats
+{% endblock %}
+
+{% block meta %}
+	<meta name="description" content="Statistiques BlueLock">
+{% endblock %}
+
+{% block js %}
+	<script src={{ asset('js/button.js') }} defer></script>
+{% endblock %}
+
+{% block body %}
+	<section class="Arc-container flex flex-col justify-center items-center bg-white">
+		<div class="w-full flex items-center justify-center">
+			<div class="w-full max-w-[1440px] my-5">
+				<h1 class="text-5xl">Sélection Arc</h1>
+			</div>
+		</div>
+
+		<div class="w-full flex items-center justify-center">
+			<div class="w-full max-w-[1440px] flex flex-wrap">
+				{% for i in 1..arc %}
+					<a class="mx-7 mb-7" href="/bluelock/stats/arc">
+						<div class="w-[300px] h-[600px] bg-[#D9D9D9]">
+							<h2 class="h-[90%] flex items-end justify-center">Arc
+								{{ i }}</h2>
+						</div>
+					</a>
+				{% endfor %} 
+				<a class="mx-7 mb-7" href="/bluelock/stats/arc">
+					<div class="w-[300px] h-[600px] bg-[#D9D9D9]">
+						<h2 class="h-[90%] flex items-end justify-center">All-Time</h2>
+					</div>
+				</a>
+			</div> 
+		</div>
+	</section>
+{% endblock %}

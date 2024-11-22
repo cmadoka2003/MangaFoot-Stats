@@ -1,0 +1,97 @@
+{% extends 'BlueLock/layout.html.twig' %}
+
+{% block title %}
+	BlueLock - Nom_Joueur | MangaFoot Stats
+{% endblock %}
+
+{% block meta %}
+	<meta name="description" content="Statistiques BlueLock">
+{% endblock %}
+
+{% block js %}
+	<script src={{ asset('js/button.js') }} defer></script>
+	<script src={{ asset('js/match.js') }} defer></script>
+{% endblock %}
+
+{% block body %}
+	<section class="details-container bg-[#001B3D] h-[253px] flex flex-row items-center justify-center">
+		<div class="flex flex-row max-md:flex-col items-center w-full max-w-[1440px] text-white max-md:items-start">
+			<div class="w-36 h-44 mr-3">
+				<img src={{ asset('img/Paris_X_Gen.webp') }} alt="logo du Paris X Gen" class="w-full h-full">
+			</div>
+			<p class="text-5xl">Paris X Gen</p>
+		</div>
+	</section>
+
+	<section class="links-container flex flex-col items-center justify-center bg-white">
+		<div class="flex flex-col w-full max-w-[1440px] text-black">
+			<div class="h-[42px] w-full max-w-[1440px] flex items-center  max-sm:h-14 max-sm:flex-wrap">
+				<a class="p-1 mr-5 hover:bg-blue-700 hover:text-white" href="/bluelock/equipes/details">Accueil</a>
+				<a class="p-1 mr-5 hover:bg-blue-700 hover:text-white" href="/bluelock/equipes/details/matchs">Matchs</a>
+				<a class="p-1 mr-5 hover:bg-blue-700 hover:text-white" href="/bluelock/equipes/details/stats">Stats</a>
+				<a class="p-1 mr-5 hover:bg-blue-700 hover:text-white" href="/bluelock/equipes/details/effectif">Effectif</a>
+			</div>
+		</div>
+	</section>
+
+	<hr class="h-1 bg-[#D9D9D9]">
+
+	<section class="matchs-container flex flex-col items-center justify-center bg-white">
+		<div class="flex flex-col w-full max-w-[1440px] text-black">
+			<h1 class="text-3xl py-10">Matchs précédents</h1>
+			<div class="flex flex-col">
+				{% for i in 1..first3 %}
+					<div class="flex flex-row justify-between items-center border-2 border-black rounded-lg mb-10 max-sm:flex-col">
+						<h2 class="p-5">nom Arc</h2>
+						<div class="flex flex-row items-center max-md:w-[405px]">
+							<div class="flex flex-row items-center justify-center">
+								<p class="text-3xl max-md:text-sm">Bastard Munchen</p>
+								<div class="w-20 h-32 max-md:w-20 max-md:h-24">
+									<img class="w-full h-full" src={{ asset('img/Munchen.webp') }} alt="logo de bastard munchen">
+								</div>
+							</div>
+							<p>0 - 0</p>
+							<div class="flex flex-row items-center">
+								<div class="w-20 h-32 ml-2 max-md:w-20 max-md:h-24">
+									<img class="w-full h-full" src={{ asset('img/Paris_X_Gen.webp') }} alt="logo de Paris X Gen">
+								</div>
+								<p class="text-3xl max-md:text-sm">Paris X Gen</p>
+							</div>
+						</div>
+						<div class="flex justify-center h-10 items-center mr-4 text-white p-3 rounded-xl bg-[#001B3D] text-xs max-sm:p-2 max-md:mb-3 max-md:mr-0">
+							<a href="">Voir plus</a>
+						</div>
+					</div>
+				{% endfor %}
+				<div id="match-plus" class="hidden">
+					{% for i in 1..last7 %}
+						<div class="flex flex-row justify-between items-center border-2 border-black rounded-lg mb-10 max-sm:flex-col">
+							<h2 class="p-5">nom Arc</h2>
+							<div class="flex flex-row items-center max-md:w-[405px]">
+								<div class="flex flex-row items-center">
+									<p class="text-3xl max-md:text-sm">Bastard Munchen</p>
+									<div class="w-20 h-32 max-md:w-20 max-md:h-24">
+										<img class="w-full h-full" src={{ asset('img/Munchen.webp') }} alt="logo de bastard munchen">
+									</div>
+								</div>
+								<p>0 - 0</p>
+								<div class="flex flex-row items-center">
+									<div class="w-20 h-32 ml-2 max-md:w-20 max-md:h-24">
+										<img class="w-full h-full" src={{ asset('img/Paris_X_Gen.webp') }} alt="logo de Paris X Gen">
+									</div>
+									<p class="text-3xl max-md:text-sm">Paris X Gen</p>
+								</div>
+							</div>
+							<div class="flex justify-center h-10 items-center mr-4 text-white p-3 rounded-xl bg-[#001B3D] text-xs max-sm:p-2 max-md:mb-3 max-md:mr-0">
+								<a href="">Voir plus</a>
+							</div>
+						</div>
+					{% endfor %}
+				</div>
+				<div>
+					<button id="match">En voir plus +</button>
+				</div>
+			</div>
+		</div>
+	</section>
+{% endblock %}

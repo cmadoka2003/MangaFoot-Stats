@@ -1,0 +1,89 @@
+{% extends 'BlueLock/layout.html.twig' %}
+
+{% block title %}
+	BlueLock - Informations | MangaFoot Stats
+{% endblock %}
+
+{% block meta %}
+	<meta name="description" content="Informations BlueLock">
+{% endblock %}
+
+{% block js %}
+	<script src={{ asset('js/button.js') }} defer></script>
+{% endblock %}
+
+
+{% block body %}
+	<section class="info-container p-7 flex flex-col justify-center items-center bg-white">
+		<div class="w-full max-w-[1440px] flex flex-row max-md:flex-col justify-center items-center">
+			<div class="w-[655px] h-[294px] max-md:w-[400px]">
+				<img src={{ asset('img/blue-lock-wallpaper.jpg') }} alt="Wallpaper BlueLock" class="w-full h-full">
+			</div>
+			<div class="w-[655px] p-5 max-md:w-[400px]">
+				<h1 class="text-2xl">Synopsis</h1>
+				<p class="text-xs">
+					"Blue Lock" est une aventure sportive captivante qui explore l’essence du football sous un angle unique. Voici les quatre piliers principaux de cette histoire :
+					<br><br>
+					1.
+					<strong>Le Projet Blue Lock</strong>
+					: Face à l'échec de l'équipe nationale japonaise en Coupe du Monde, l'Union japonaise de football initie un projet radical : "Blue Lock". Ce programme expérimental vise à créer l'attaquant parfait capable de porter l'équipe au sommet. Dirigé par Jinpachi Ego, un entraîneur visionnaire et excentrique, ce projet rassemble 300 des meilleurs jeunes attaquants du pays pour une formation qui redéfinit les règles du football traditionnel.
+					<br><br>
+					2.
+					<strong>Survie et Rivalité</strong>
+					: Le projet fonctionne sur un principe impitoyable : seuls les meilleurs peuvent continuer, tandis que les perdants voient leur carrière internationale détruite. Chaque participant doit non seulement prouver sa supériorité dans des matchs acharnés, mais aussi naviguer dans une rivalité constante, rendant chaque victoire cruciale pour leur survie.
+					<br><br>
+					3.
+					<strong>Football solitaire</strong>
+					: Contrairement à l'idée classique de travail d'équipe, "Blue Lock" met l'accent sur l'individualité. Yoichi Isagi, le protagoniste, doit apprendre à penser en tant qu'attaquant égoïste et prioriser ses propres ambitions pour se démarquer. Ce concept redéfinit la manière de jouer au football, mêlant stratégie et instinct brut.
+					<br><br>
+					4.
+					<strong>Conclusion</strong>
+					: "Blue Lock" est bien plus qu'un simple manga sportif. Il s'agit d'une quête de perfection, un défi psychologique où chaque joueur doit confronter ses limites et ses valeurs. À travers des matchs palpitants et des confrontations intenses, l'œuvre interroge ce qu'il faut vraiment pour devenir le meilleur dans un monde où l'échec n'est pas une option.
+				</p>
+			</div>
+		</div>
+
+		<div class="w-full max-w-[1440px] flex flex-row justify-center items-center max-md:flex-col">
+			<div class="w-[655px] h-[294px] mt-32 flex flex-col max-md:w-[400px]">
+				<h2 class="text-2xl">Où retrouver BlueLock ?</h2>
+				<div>
+					<p class="text-xs mb-2">
+						<strong>Anime</strong>
+						:</p>
+					<a class="bg-orange-500 hover:bg-orange-400 text-white font-bold py-2 px-4 rounded" href="https://www.crunchyroll.com/fr/series/G4PH0WEKE/blue-lock?srsltid=AfmBOopGUUGjxhKG7Nv15TlpR6EB4kDR4Bney2okmeMnq229EyFBxA96" target="_blank">Crunchyroll</a>
+					<a class="bg-blue-500 hover:bg-blue-400 text-white font-bold py-2 px-4 rounded" href="https://www.primevideo.com/-/fr/detail/BLUELOCK/0OO3WN8OLQEWVSXJKIFB4BNMT3">PrimeVideo</a>
+				</div>
+				<div>
+					<p class="text-xs my-2">
+						<strong>Manga</strong>
+						:</p>
+					<a class="bg-yellow-500 hover:bg-yellow-400 text-white font-bold py-2 px-4 rounded" href="https://www.fnac.com/se86940/Blue-Lock" target="_blank">Fnac</a>
+				</div>
+			</div>
+			<div class="w-[655px] h-[294px] max-md:w-[400px]">
+				<img src={{ asset('img/isagi-yoichi-wallpaper.webp') }} alt="Wallpaper Isagi Yoichi" class="w-full h-full">
+			</div>
+		</div>
+
+		<div class="w-full max-w-[1440px] flex flex-row justify-center items-center">
+			<div>
+				<h2 class="text-2xl">Pourquoi ce site</h2>
+				<p class="text-xs">
+					Créer un site de statistiques sur Blue Lock repose sur plusieurs motivations principales. 
+																									Avant tout, c’est l’envie de partager une passion pour cet univers unique qui me pousse à développer un site dédiée. 
+																									Blue Lock, en mêlant football, psychologie et compétition, offre une richesse de contenu qui mérite d’être explorée en profondeur. 
+																									Le site devient alors un espace où les fans peuvent se rassembler, découvrir de nouvelles analyses, et échanger autour de données chiffrées qui mettent en lumière les performances et les évolutions des personnages.
+					<br><br>
+					Un tel projet permet également d’approfondir les connaissances sur le manga et son univers. 
+																					En examinant de près les statistiques des joueurs, leurs performances dans les matchs, et les dynamiques du programme Blue Lock, le site peut offrir des insights captivants.
+																					Ce processus encourage non seulement une lecture plus attentive mais aussi une compréhension plus analytique de l’œuvre. 
+																					Les fans peuvent ainsi explorer des éléments souvent implicites ou peu détaillés dans le récit, enrichissant leur expérience globale.
+					<br><br>
+					<strong class="text-base">Enfin, il est essentiel de noter que les statistiques présentées sur le site ne sont pas toujours des vérités absolues. 
+																Étant donné que certaines informations dans Blue Lock restent subjectives ou ouvertes à interprétation, les données peuvent varier et ne pas refléter une précision à 100 %.
+					</strong>
+				</p>
+			</div>
+		</div>
+	</section>
+{% endblock %}

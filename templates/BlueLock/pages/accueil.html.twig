@@ -1,0 +1,184 @@
+{% extends 'BlueLock/layout.html.twig' %}
+
+{% block title %}
+	BlueLock - Accueil | MangaFoot Stats
+{% endblock %}
+
+{% block meta %}
+	<meta name="description" content="Accueil">
+{% endblock %}
+
+{% block js %}
+	<script src={{ asset('js/button.js') }} defer></script>
+{% endblock %}
+
+
+{% block body %}
+	<section class="score-container flex flex-col bg-[#86A5CB] h-[800px] items-center justify-center">
+		<div class="matchs-top-container flex flex-row items-center justify-between pb-28 w-full max-w-[1440px] max-lg:flex-col">
+			<div class="matchs-info flex flex-col items-center">
+				<div class="matchs-info-img w-[257px] h-[67px]">
+					<img class="w-full h-full" src={{ asset('img/bluelocklogo.png') }} alt="logo BlueLock">
+				</div>
+				<p class="max-sm:text-xs">
+					<span class="text-2xl sm:text-base">Manga</span>
+					- match en cours</p>
+			</div>
+			<div class="matchs-score flex flex-row items-center bg-[#0D4B98] rounded-[49px] max-sm:rounded-none text-white px-12 max-sm:px-2">
+				<p class="text-2xl max-sm:text-base">Bastard Munchen</p>
+				<div class="matchs-score-img w-[100px] h-[150px]">
+					<img class="w-full h-full" src={{ asset('img/Munchen.webp') }} alt="logo du bastard munchen">
+				</div>
+				<a href="">
+					<p class="text-xs m-3">2 - 2</p>
+				</a>
+				<div class="matchs-score-img w-[100px] h-[150px]">
+					<img class="w-full h-full" src={{ asset('img/Paris_X_Gen.webp') }} alt="logo du Paris X Gen">
+				</div>
+				<p class="text-2xl max-sm:text-base">Paris X Gen</p>
+			</div>
+		</div>
+		<div class="matchs-bottom-container flex flex-row items-center justify-between w-full max-w-[1440px] max-lg:flex-col">
+			<div class="matchs-score flex flex-row items-center bg-[#0D4B98] rounded-[49px] max-sm:rounded-none text-white px-12 max-sm:px-2 max-lg:mb-2">
+				<p class="text-2xl max-sm:text-base">Blue Lock Eleven</p>
+				<div class="matchs-score-img w-[100px] h-[150px]">
+					<img class="w-full h-full" src={{ asset('img/bluelockeleven.png') }} alt="logo du bastard munchen">
+				</div>
+				<a href="">
+					<p class="text-xs m-3">4 - 3</p>
+				</a>
+				<div class="matchs-score-img w-[100px] h-[150px]">
+					<img class="w-full h-full" src={{ asset('img/japan.png') }} alt="logo du Paris X Gen">
+				</div>
+				<p class="text-2xl max-sm:text-base">Japan U-20</p>
+			</div>
+			<div class="matchs-info flex flex-col items-center">
+				<div class="matchs-info-img w-[257px] h-[67px]">
+					<img class="w-full h-full" src={{ asset('img/bluelocklogo.png') }} alt="logo BlueLock">
+				</div>
+				<p>
+					<span class="text-2xl">Anime</span>
+					- match en cours</p>
+			</div>
+		</div>
+	</section>
+
+	<section class="players-container flex flex-col justify-center items-center pt-5 pb-16 bg-white">
+		<div class="flex flex-row justify-between w-full max-w-[1440px]">
+			<h1 class="text-2xl">Joueurs</h1>
+			<a href="/bluelock/joueurs">Voir plus ></a>
+		</div>
+		<div class="item-container w-[100%] max-w-[1440px] scrollbar">
+			<div class="overflow-x-auto flex flex-row items-center space-x-5">
+				{% for i in 0..nombres %}
+					<a href="/bluelock/joueurs/details">
+						<div class="player-item flex flex-col items-center justify-center w-[190px] h-[285px] bg-[#D9D9D9] rounded-3xl text-black">
+							<div class="w-[150px] h-[150px] overflow-hidden rounded-full">
+								<img class="w-full h-full object-cover" src="{{ asset('img/isagi.jpg') }}" alt="Isagi Yoichi">
+							</div>
+							<p class="mt-4 font-bold">Isagi</p>
+							<p class="text-gray-500">Yoichi</p>
+						</div>
+					</a>
+				{% endfor %}
+			</div>
+		</div>
+	</section>
+
+	<hr class="w-full bg-[#0D4B98] h-5 ">
+
+	<section class="teams-container flex flex-col justify-center items-center pt-5 pb-16 bg-white">
+		<div class="flex flex-row justify-between w-full max-w-[1440px]">
+			<h1 class="text-2xl">Équipes</h1>
+			<a href="/bluelock/equipes">Voir plus ></a>
+		</div>
+		<div class="item-container w-[100%] max-w-[1440px] scrollbar">
+			<div class="overflow-x-auto flex flex-row items-center space-x-5">
+				{% for i in 0..nombres %}
+					<a href="">
+						<div class="team-item flex flex-col items-center justify-center w-[190px] h-[285px] bg-[#D9D9D9] rounded-3xl text-black">
+							<div class="w-[150px] h-[150px] overflow-hidden rounded-full">
+								<img class="w-full h-full object-cover" src="{{ asset('img/Paris_X_Gen.webp') }}" alt="logo du Paris X Gen">
+							</div>
+							<p class="mt-4 font-bold">Paris X Gen</p>
+						</div>
+					</a>
+				{% endfor %}
+			</div>
+		</div>
+	</section>
+
+	<hr class="w-full bg-[#0D4B98] h-20 max-lg:hidden">
+
+	<section class="stats-container flex justify-center items-center py-16 text-white max-lg:hidden bg-white">
+		<div class="flex flex-row justify-between items-center w-full max-w-[1440px]">
+			<div class="w-[296px] h-[383px]">
+				<img class="w-full h-full rounded-3xl" src={{ asset('img/isagi.jpg') }} alt="Isagi Yoichi">
+			</div>
+			<div class="bg-[#0D4B98] w-[738px] h-[639px] rounded-3xl flex flex-col items-center justify-center">
+				<h1 class="p-2">Tableau Comparatif</h1>
+				<div class="flex flex-col w-full">
+					<p class="flex justify-center">Buts</p>
+					<div class="flex flex-row items-center justify-between mb-5">
+						<p class="px-5">0</p>
+						<div class="bg-white h-2.5 rounded-full" style="width: 55%"></div>
+						<div class="bg-[#001B3D] h-2.5 rounded-full" style="width: 45%"></div>
+						<p class="px-5">0</p>
+					</div>
+					<p class="flex justify-center">Passes décisives</p>
+					<div class="flex flex-row items-center justify-between mb-5">
+						<p class="px-5">0</p>
+						<div class="bg-white h-2.5 rounded-full" style="width: 55%"></div>
+						<div class="bg-[#001B3D] h-2.5 rounded-full" style="width: 45%"></div>
+						<p class="px-5">0</p>
+					</div>
+					<p class="flex justify-center">Tirs cadrés</p>
+					<div class="flex flex-row items-center justify-between mb-5">
+						<p class="px-5">0</p>
+						<div class="bg-white h-2.5 rounded-full" style="width: 55%"></div>
+						<div class="bg-[#001B3D] h-2.5 rounded-full" style="width: 45%"></div>
+						<p class="px-5">0</p>
+					</div>
+					<p class="flex justify-center">Tirs non cadrés</p>
+					<div class="flex flex-row items-center justify-between mb-5">
+						<p class="px-5">0</p>
+						<div class="bg-white h-2.5 rounded-full" style="width: 55%"></div>
+						<div class="bg-[#001B3D] h-2.5 rounded-full" style="width: 45%"></div>
+						<p class="px-5">0</p>
+					</div>
+					<p class="flex justify-center">Touches</p>
+					<div class="flex flex-row items-center justify-between mb-5">
+						<p class="px-5">0</p>
+						<div class="bg-white h-2.5 rounded-full" style="width: 55%"></div>
+						<div class="bg-[#001B3D] h-2.5 rounded-full" style="width: 45%"></div>
+						<p class="px-5">0</p>
+					</div>
+					<p class="flex justify-center">Passes tentés</p>
+					<div class="flex flex-row items-center justify-between mb-5">
+						<p class="px-5">0</p>
+						<div class="bg-white h-2.5 rounded-full" style="width: 55%"></div>
+						<div class="bg-[#001B3D] h-2.5 rounded-full" style="width: 45%"></div>
+						<p class="px-5">0</p>
+					</div>
+					<p class="flex justify-center">Passes réussis</p>
+					<div class="flex flex-row items-center justify-between mb-5">
+						<p class="px-5">0</p>
+						<div class="bg-white h-2.5 rounded-full" style="width: 55%"></div>
+						<div class="bg-[#001B3D] h-2.5 rounded-full" style="width: 45%"></div>
+						<p class="px-5">0</p>
+					</div>
+					<p class="flex justify-center">Perte de balle</p>
+					<div class="flex flex-row items-center justify-between mb-5">
+						<p class="px-5">0</p>
+						<div class="bg-white h-2.5 rounded-full" style="width: 55%"></div>
+						<div class="bg-[#001B3D] h-2.5 rounded-full" style="width: 45%"></div>
+						<p class="px-5">0</p>
+					</div>
+				</div>
+			</div>
+			<div class="w-[296px] h-[383px]">
+				<img class="w-full h-full rounded-3xl" src={{ asset('img/isagi.jpg') }} alt="Isagi Yoichi">
+			</div>
+		</div>
+	</section>
+{% endblock %}
