@@ -1,0 +1,73 @@
+{% extends 'layout.html.twig' %}
+
+{% block title %}
+	Inscription | MangaFoot Stats
+{% endblock %}
+
+{% block meta %}
+	<meta name="description" content="Inscription">
+{% endblock %}
+
+
+{% block body %}
+	<header>
+		<div class="nav-top-conatainer bg-[#001B3D] flex justify-center">
+			<div class="nav-top flex justify-between align-center w-[1440px] h-[40px]">
+				<div class="w-[80px] h-[40px]">
+					<a href="/connexion"><img class="w-full h-full" src={{ asset('img/logo-MFS.png') }} alt="logo du site MangaFoot Stats"></a>
+				</div>
+				<div class="flex flex-row items-center">
+					<div class="w-[80px] h-[20px] mr-5">
+						<a href="/bluelock/accueil"><img class="w-full h-full" src={{ asset('img/bluelocklogo.png') }} alt="logo BlueLock"></a>
+					</div>
+					<div class="w-[80px] h-[20px] mr-5">
+						<a href=""><img class="w-full h-full" src={{ asset('img/Aoashi_logo.png') }} alt="logo Aoashi"></a>
+					</div>
+					<div class="w-[80px] h-[20px] mr-5">
+						<a href=""><img class="w-full h-full" src={{ asset('img/Captain_Tsubasa.png') }} alt="logo Captain Tsubasa"></a>
+					</div>
+				</div>
+				<div class="nav-top-login flex flex-row items-center hover:bg-blue-800 rounded-xl">
+					<a href="/connexion" class="mr-2 text-xs text-white rounded-xl p-1">Modifier profil</a>
+				</div>
+			</div>
+		</div>
+	</header>
+
+	<main class="bg-[#001B3D]">
+		<section class="profil-container flex justify-center items-center mb-20">
+			<div class="w-full max-w-[1440px] text-white">
+				<div class="flex flex-row items-center max-xl:flex-col mt-10">
+					<div class="w-80 h-80 rounded-full overflow-hidden mr-4">
+						<img class="w-full h-full" src={{ asset('img/avatar.jpg') }} alt="avatar par défault">
+					</div>
+					<div>
+						<h1 class="text-5xl">Pseudo</h1>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<section class="profil-container flex justify-center items-center bg-white">
+			<div class="w-full max-w-[1440px] text-black">
+				<div class="flex flex-col p-10">
+					<h1 class="text-2xl">Joueurs Favoris</h1>
+					<div class="flex flex-row flex-wrap mt-10">
+						{% for i in 1..nombres %}
+							<a class="mx-10 mb-10" href="/bluelock/joueurs/details">
+								<div class="player-item flex flex-col items-center justify-center w-[190px] h-[285px] bg-[#D9D9D9] rounded-3xl text-black">
+									<div class="w-[150px] h-[150px] overflow-hidden rounded-full">
+										<img class="w-full h-full object-cover" src="{{ asset('img/isagi.jpg') }}" alt="Isagi Yoichi">
+									</div>
+									<p class="mt-4 font-bold">Isagi</p>
+									<p class="text-gray-500">Yoichi</p> 
+								</div>
+							</a>
+						{% endfor %}
+					</div>
+				</div>
+			</div>
+		</section>
+	</main>
+
+{% endblock %}

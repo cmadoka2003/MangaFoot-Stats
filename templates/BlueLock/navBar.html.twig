@@ -1,0 +1,44 @@
+<div class="nav-top-conatainer bg-[#001B3D] flex justify-center">
+	<div class="nav-top flex justify-between align-center w-[1440px] h-[40px]">
+		<div class="w-[80px] h-[40px]">
+			<a href="/connexion"><img class="w-full h-full" src={{ asset('img/logo-MFS.png') }} alt="logo du site MangaFoot Stats"></a>
+		</div>
+		<div class="nav-top-login flex flex-row items-center">
+			<a href="/connexion" class="mr-2 text-xs text-white">Se connecter</a>
+			<img src={{ asset('img/profil.png') }} alt="photo de profil par défault">
+		</div>
+	</div> 
+</div>
+
+<nav class="nav-bottom-container bg-[#0D4B98] flex justify-center">
+	<div class="nav-bottom flex align-center justify-between w-[1440px] h-[80px]">
+		<div class="bl-logo w-[163px] h-[36px] mr-64 mt-5">
+			<a href="/bluelock/accueil"><img class="w-full h-full" src="{{ asset('img/bluelocklogo.png') }}" alt="logo BlueLock"></a>
+		</div>
+		<!-- Navigation principale -->
+		<div class="nav-bottom-liens hidden lg:flex items-center justify-between w-full text-white">
+			<a href="/bluelock/matchs" class="px-4 py-2 hover:bg-blue-700">Matchs</a>
+			<a href="/bluelock/equipes" class="px-4 py-2 hover:bg-blue-700">Équipes</a>
+			<a href="/bluelock/stats" class="px-4 py-2 hover:bg-blue-700">Stats</a>
+			<a href="/bluelock/joueurs" class="px-4 py-2 hover:bg-blue-700">Joueurs</a>
+			<a href="" class="px-4 py-2 hover:bg-blue-700">Creations</a>
+			<a href="/bluelock/infos" class="px-4 py-2 hover:bg-blue-700">Infos</a>
+		</div>
+		<!-- Menu déroulant pour petit écran -->
+		<div id="navbar-dropdown" class="absolute top-28 hidden w-full h-10 bg-[#0D4B98] lg:hidden text-white max-sm:text-xs">
+			<a href="/bluelock/matchs" class="py-2 px-4 hover:bg-blue-700">Matchs</a>
+			<a href="/bluelock/equipes" class="py-2 px-4 hover:bg-blue-700">Équipes</a>
+			<a href="/bluelock/stats" class="py-2 px-4 hover:bg-blue-700">Stats</a>
+			<a href="/bluelock/joueurs" class="py-2 px-4 hover:bg-blue-700">Joueurs</a>
+			<a href="" class="py-2 px-4 hover:bg-blue-700">Creations</a>
+			<a href="/bluelock/infos" class="py-2 px-4 hover:bg-blue-700">Infos</a>
+		</div>
+		<!-- Menu Burger -->
+		<button data-collapse-toggle="navbar-dropdown" type="button" class="flex items-center p-2 w-10 h-10 mt-4 justify-center text-sm text-white rounded-lg lg:hidden bg-[#001B3D]" aria-controls="navbar-dropdown" aria-expanded="false">
+			<span class="sr-only">Open main menu</span>
+			<svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewbox="0 0 17 14">
+				<path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 1h15M1 7h15M1 13h15"/>
+			</svg>
+		</button>
+	</div>
+</nav>

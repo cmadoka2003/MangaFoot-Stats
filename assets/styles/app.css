@@ -1,0 +1,42 @@
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Roboto", sans-serif;
+}
+
+
+
+/* Menu burger */
+@media (max-width: 426px) {
+    .nav-bottom-liens {
+        display: none; /* Masquer la navigation principale */
+    }
+
+    #navbar-dropdown.hidden {
+        display: none; /* Masquer le menu déroulant par défaut */
+    }
+
+    #navbar-dropdown.show {
+        display: flex; /* Afficher le menu déroulant lorsque actif */
+    }
+}
+
+.scrollbar {
+    scrollbar-width: thin; /* Barre fine */
+    scrollbar-color: #0d4b98 #f0f0f0; /* Pouce bleu, piste grise */
+}
+
+#stats-cles {
+    transition: all 0.3s ease-in-out;
+}
+
+.clip-hexagon {
+    clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+}

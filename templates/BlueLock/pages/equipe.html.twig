@@ -1,0 +1,101 @@
+{% extends 'BlueLock/layout.html.twig' %}
+
+{% block title %}
+	BlueLock - Équipes | MangaFoot Stats
+{% endblock %}
+
+{% block meta %}
+	<meta name="description" content="Equipe">
+{% endblock %}
+
+{% block js %}
+	<script src={{ asset('js/button.js') }} defer></script>
+{% endblock %}
+
+
+{% block body %}
+	<section class="team-container p-7 bg-white">
+		<div class="w-full flex items-center justify-center">
+			<div class="w-full max-w-[1440px] mb-7">
+				<h1 class="text-5xl">Équipes</h1>
+			</div>
+		</div>
+
+		<div class="First-Selection-Teams">
+			<div class="w-full flex items-center justify-center">
+				<div class="flex flex-col w-full max-w-[1440px]">
+					<h2 class="text-2xl">First Selection Arc</h2>
+                    <div class="flex flex-row flex-wrap">
+                        {% for i in 1..teams %}
+                            <a class="mr-10" href="/bluelock/equipes/details">
+                                <div class="flex flex-col items-center">
+                                    <div class="w-14 h-20">
+                                        <img class="w-full h-full" src={{ asset('img/Paris_X_Gen.webp') }} alt="logo de Paris X Gen">
+                                    </div>
+                                    <p>Paris X Gen</p>
+                                </div>
+                            </a>
+                        {% endfor %}
+                    </div>
+
+                    <h2 class="text-2xl mt-10">Second Selection Arc</h2>
+                    <div class="flex flex-row flex-wrap">
+                        {% for i in 1..teams %}
+                            <a class="mr-10" href="/bluelock/equipes/details">
+                                <div class="flex flex-col items-center">
+                                    <div class="w-14 h-20">
+                                        <img class="w-full h-full" src={{ asset('img/Paris_X_Gen.webp') }} alt="logo de Paris X Gen">
+                                    </div>
+                                    <p>Paris X Gen</p>
+                                </div>
+                            </a>
+                        {% endfor %}
+                    </div>
+
+                    <h2 class="text-2xl mt-10">Third Selection Arc</h2>
+                    <div class="flex flex-row flex-wrap">
+                        {% for i in 1..teams %}
+                            <a class="mr-10" href="/bluelock/equipes/details">
+                                <div class="flex flex-col items-center">
+                                    <div class="w-14 h-20">
+                                        <img class="w-full h-full" src={{ asset('img/Paris_X_Gen.webp') }} alt="logo de Paris X Gen">
+                                    </div>
+                                    <p>Paris X Gen</p>
+                                </div>
+                            </a>
+                        {% endfor %}
+                    </div>
+
+                    <h2 class="text-2xl mt-10">U-20 Arc</h2>
+                    <div class="flex flex-row flex-wrap">
+                        {% for i in 1..teams %}
+                            <a class="mr-10" href="/bluelock/equipes/details">
+                                <div class="flex flex-col items-center">
+                                    <div class="w-14 h-20">
+                                        <img class="w-full h-full" src={{ asset('img/Paris_X_Gen.webp') }} alt="logo de Paris X Gen">
+                                    </div>
+                                    <p>Paris X Gen</p>
+                                </div>
+                            </a>
+                        {% endfor %}
+                    </div>
+
+                    <h2 class="text-2xl mt-10">Neo Egoist League Arc</h2>
+                    <div class="flex flex-row flex-wrap">
+                        {% for i in 1..teams %}
+                            <a class="mr-10" href="/bluelock/equipes/details">
+                                <div class="flex flex-col items-center">
+                                    <div class="w-14 h-20">
+                                        <img class="w-full h-full" src={{ asset('img/Paris_X_Gen.webp') }} alt="logo de Paris X Gen">
+                                    </div>
+                                    <p>Paris X Gen</p>
+                                </div>
+                            </a>
+                        {% endfor %}
+                    </div>
+
+				</div>
+			</div>
+		</div>
+	</section>
+{% endblock %}

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>
+			{% block title %}{% endblock %}
+		</title>
+
+		{% block meta %}{% endblock %}
+
+		
+		<link rel="stylesheet" href={{ asset('styles/app.css') }}>
+	</head>
+	<body class="bg-[#001B3D]">
+		<header>
+			{% include 'BlueLock/navbar.html.twig' %}
+		</header>
+		
+		<main>
+			{% block body %}{% endblock %}
+		</main>
+		
+		<footer>
+			{% include 'BlueLock/footer.html.twig' %}
+		</footer>
+		
+		{% block js %}{% endblock %}
+	</body>
+</html>

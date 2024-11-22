@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>
+			{% block title %}{% endblock %}
+		</title>
+
+		{% block meta %}{% endblock %}
+
+		
+		<link rel="stylesheet" href={{ asset('styles/app.css') }}>
+	</head>
+	<body class="bg-[#001B3D]">
+		{% block body %}{% endblock %}
+		{% block js %}{% endblock %}
+	</body>
+</html>

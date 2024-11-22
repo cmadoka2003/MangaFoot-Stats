@@ -1,0 +1,33 @@
+{% extends 'layout.html.twig' %}
+
+{% block title %}
+	Connexion | MangaFoot Stats
+{% endblock %}
+
+{% block meta %}
+	<meta name="description" content="Connexion">
+{% endblock %}
+
+
+{% block body %}
+    <section class="connexion-container flex justify-center items-center bg-[#001B3D] h-screen">
+        <div class="w-full max-w-[1440px] text-white">
+            <div class="flex flex-row justify-center items-center max-xl:flex-col"> 
+                <div class="w-[552px] h-[320px] max-md:w-[352px] max-md:h-[180px]">
+                    <img class="w-full h-full" src={{ asset('img/logo-MFS-xl.png') }} alt="logo MangaFoot Stats">
+                </div>
+                <div class="flex flex-col justify-center items-center p-10">
+                    <h1 class="text-5xl mb-10 max-md:hidden">Connexion</h1>
+                    <form action="" method="POST" class="flex flex-col justify-center items-center">
+                        <label for="pseudo" class="text-3xl max-md:text-base">Pseudo</label>
+                        <input type="text" id="pseudo" name="pseudo" placeholder="Pseudo" class="w-[552px] h-8 mb-10 max-md:w-[250px]">
+                        <label for="password" class="text-3xl max-md:text-base">Mot de passe</label>
+                        <input type="password" id="password" name="password" placeholder="Mot de passe" class="w-[552px] h-8 mb-10 max-md:w-[250px]">
+                        <button type="submit" class="border-2 border-white rounded-2xl px-16 py-2 mb-20">Connexion</button>
+                    </form>
+                    <p>Pas encore inscrit ? <a href="/inscription">Inscrivez-vous</a></p>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}

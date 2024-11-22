@@ -1,0 +1,135 @@
+{% extends 'BlueLock/layout.html.twig' %}
+
+{% block title %}
+	BlueLock - Nom_Joueur | MangaFoot Stats
+{% endblock %}
+
+{% block meta %}
+	<meta name="description" content="Statistiques BlueLock">
+{% endblock %}
+
+{% block js %}
+	<script src={{ asset('js/button.js') }} defer></script>
+{% endblock %}
+
+{% block body %}
+	<section class="details-container bg-[#001B3D] h-[492px] max-md:h-[550px]  flex flex-row items-center justify-center">
+		<div class="flex flex-row max-md:flex-col items-center justify-between w-full max-w-[1440px] text-white">
+			<div class="max-md:order-2">
+				<div class="flex flex-col">
+					<h1 class="text-5xl">
+						Isagi
+						<br>
+						Yoichi
+					</h1>
+					<div class="flex flex-row">
+						<a href="/bluelock/equipes/details" class="flex flex-row items-center"> 
+							<div class="w-9 h-12">
+								<img class="w-full h-full" src={{ asset("img/japan.png") }} alt="logo du japon">
+							</div>
+							<p class="text-sm">Japon</p>
+						</a>
+						<a href="/bluelock/equipes/details" class="flex flex-row items-center ml-4">
+							<div class="w-9 h-12">
+								<img class="w-full h-full" src={{ asset('img/Munchen.webp') }} alt="logo du bastard munchen">
+							</div>
+							<p class="text-sm">bastard munchen</p>
+						</a>
+					</div>
+				</div>
+			</div>
+			<div class="w-96 h-96">
+				<img src={{ asset('img/isagi.jpg') }} alt="Wallpaper Isagi Yoichi" class="w-full h-full rounded-2xl">
+			</div>
+		</div>
+	</section>
+
+	<section class="links-container flex flex-col items-center justify-center bg-white">
+		<div class="flex flex-col w-full max-w-[1440px] text-black">
+			<div class="h-[42px] w-full max-w-[1440px] flex items-center  max-sm:h-14 max-sm:flex-wrap">
+				<a class="p-1 mr-5 hover:bg-blue-700 hover:text-white" href="/bluelock/joueurs/details">Accueil</a>
+				<a class="p-1 mr-5 hover:bg-blue-700 hover:text-white" href="/bluelock/joueurs/details/stats">Stats</a>
+				<a class="p-1 mr-5 hover:bg-blue-700 hover:text-white" href="/bluelock/joueurs/details/matchs">Matchs</a>
+				<a class="p-1 mr-5 hover:bg-blue-700 hover:text-white" href="/bluelock/joueurs/details/general">General</a>
+			</div>
+		</div>
+	</section>
+
+	<hr class="h-1 bg-[#D9D9D9]">
+
+	<section class="infos-container flex flex-col items-center justify-center bg-white">
+		<div class="flex flex-col w-full max-w-[1440px] text-black">
+			<div class="flex flex-row max-md:flex-wrap m-2 mb-10">
+                <div class="flex flex-col w-72 max-md:w-44 border-l-2 border-[#D9D9D9] max-md:border-0 p-2">
+                    <p class="text-[#AEAEAE] text-xs max-md:text-base">POSTE</p>
+                    <p class="text-[28px] max-md:text-base">Attaquant</p>
+                </div>
+                <div class="flex flex-col w-72 max-md:w-44 border-l-2 border-[#D9D9D9] max-md:border-0 p-2">
+                    <p class="text-[#AEAEAE] text-xs max-md:text-base">NUMERO</p>
+                    <p class="text-[28px] max-md:text-base">11</p>
+                </div>
+                <div class="flex flex-col w-72 max-md:w-44 border-l-2 border-[#D9D9D9] max-md:border-0 p-2">
+                    <p class="text-[#AEAEAE] text-xs max-md:text-base">PAYS DE NAISSANCE</p>
+                    <p class="text-[28px] max-md:text-base">Japon</p>
+                </div>
+                <div class="flex flex-col w-72 max-md:w-44 border-l-2 border-[#D9D9D9] max-md:border-0 p-2"> 
+                    <p class="text-[#AEAEAE] text-xs max-md:text-base">DATE DE NAISSANCE</p>
+                    <p class="text-[28px] max-md:text-base">01/01(19)</p>
+                </div> 
+                <div class="flex flex-col w-72 max-md:w-44 border-l-2 border-[#D9D9D9] max-md:border-0 p-2"> 
+                    <p class="text-[#AEAEAE] text-xs max-md:text-base">TAILLE</p>
+                    <p class="text-[28px] max-md:text-base">1m78</p>
+                </div>
+            </div>
+
+            <div class="m-2 border-2 border-black rounded-md mb-10 ">
+                <div class="flex flex-col p-5">
+                    <div class="flex flex-row justify-between">
+                        <h1 class="text-[28px] max-md:text-base mb-8">Statistiques clés - All-Time</h1>
+                        <a href="/bluelock/joueurs/details/stats">Voir toutes les stats</a>
+                    </div>
+                    <div class="flex flex-row flex-wrap">
+                        <div class="flex flex-col w-[230px] max-md:w-44 mb-10">
+                            <p class="text-5xl">0</p>
+                            <h2 class="text-xs text-[#AEAEAE]">Matchs joués</h2>
+                        </div>
+                        <div class="flex flex-col w-[230px] max-md:w-44 mb-10">
+                            <p class="text-5xl">0</p>
+                            <h2 class="text-xs text-[#AEAEAE]">Buts</h2> 
+                        </div> 
+                        <div class="flex flex-col w-[230px] max-md:w-44 mb-10">
+                            <p class="text-5xl">0</p>
+                            <h2 class="text-xs text-[#AEAEAE]">Tirs</h2> 
+                        </div>
+                        <div class="flex flex-col w-[230px] max-md:w-44 mb-10">
+                            <p class="text-5xl">0</p>
+                            <h2 class="text-xs text-[#AEAEAE]">Passes décisives</h2>
+                        </div>
+                        <div class="flex flex-col w-[230px] max-md:w-44 mb-10">
+                            <p class="text-5xl">0</p>
+                            <h2 class="text-xs text-[#AEAEAE]">Precision de passes (%)</h2>
+                        </div>
+                        <div class="flex flex-col w-[230px] max-md:w-44 mb-10"> 
+                            <p class="text-5xl">0</p> 
+                            <h2 class="text-xs text-[#AEAEAE]">Touches </h2>
+                        </div>
+                        <div class="flex flex-col w-[230px] max-md:w-44 mb-10">
+                            <div class="flex flex-row items-center">
+                                <div class="w-4 h-8 bg-yellow-300"></div>
+                                <p class="text-5xl">0</p>
+                            </div>
+                            <h2 class="text-xs text-[#AEAEAE]">Cartons jaunes</h2>
+                        </div>
+                        <div class="flex flex-col w-[230px] max-md:w-44 mb-10">
+                            <div class="flex flex-row items-center">
+                                <div class="w-4 h-8 bg-red-500"></div>
+                                <p class="text-5xl">0</p>
+                            </div>
+                            <h2 class="text-xs text-[#AEAEAE]">Cartons rouges</h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+		</div>
+	</section>
+{% endblock %}

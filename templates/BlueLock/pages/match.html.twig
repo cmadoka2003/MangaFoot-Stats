@@ -1,0 +1,75 @@
+{% extends 'BlueLock/layout.html.twig' %}
+
+{% block title %}
+	BlueLock - Matchs | MangaFoot Stats
+{% endblock %}
+
+{% block meta %}
+	<meta name="description" content="Matchs">
+{% endblock %}
+
+{% block js %}
+	<script src={{ asset('js/button.js') }} defer></script>
+{% endblock %}
+
+{% block body %}
+    <section class="filter-container flex flex-col justify-center items-center bg-white">
+        <div class="bg-[#86A5CB] w-full flex items-center justify-center">
+            <div class="h-[60px] w-full max-w-[1440px] flex items-center">
+                <h1 class="text-2xl text-white">Matchs joués</h1>
+            </div>
+        </div>
+        
+        <div class="bg-[#001B3D] w-full flex items-center justify-center">
+            <div class="h-[42px] w-full max-w-[1440px] flex items-center text-white max-sm:text-xs max-sm:h-14 max-sm:flex-wrap">
+                <a class="p-1 mr-5 hover:bg-blue-700" href="">First Selection Arc</a>
+                <a class="p-1 mr-5 hover:bg-blue-700" href="">Second Selection Arc</a>
+                <a class="p-1 mr-5 hover:bg-blue-700" href="">Third Selection Arc</a>
+                <a class="p-1 mr-5 hover:bg-blue-700" href="">U-20 Arc</a>
+                <a class="p-1 mr-5 hover:bg-blue-700" href="">Neo Egoist League Arc</a>
+            </div>
+        </div>
+
+        <hr class="w-full bg-white">
+    
+        <div class="bg-[#001B3D] w-full flex items-center justify-center"> 
+            <div class="h-[56px] w-full max-w-[1440px] flex items-center text-white">
+                <a href="" class="text-xs border-2 border-white p-2 hover:bg-blue-800">Filtrer</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="matchs-container flex justify-center items-center py-6 bg-white">
+        <div class="w-full flex items-center justify-center">
+            <div class="w-full max-w-[1440px] flex flex-wrap items-center justify-center">
+            {% for i in 0..nombres %}
+                <div class="border-2 border-black w-[690px] h-32 m-1  flex flex-row items-center justify-between">
+                    <div class="flex flex-col justify-center w-9/12 border-r-2 border-black">
+                        <div class="flex flex-row items-center justify-between">
+                            <div class="flex flex-row items-center">
+                                <div class="w-[27px] h-[35px]">
+                                    <img class="w-full h-full" src={{ asset('img/Munchen.webp') }} alt="logo du bastard munchen">
+                                </div>
+                                <p class="w-72">Bastard Munchen</p>
+                            </div>
+                            <p class="w-4">0</p>
+                        </div>
+                        <div class="flex flex-row items-center justify-between">
+                            <div class="flex flex-row items-center">
+                                <div class="w-[27px] h-[35px]">
+                                    <img class="w-full h-full" src={{ asset('img/Paris_X_Gen.webp') }} alt="logo du Paris X Gen">
+                                </div>
+                                <p class="w-72">Paris X Gen</p>
+                            </div>
+                            <p class="w-4">0</p>
+                        </div>
+                    </div>
+                    <div class="flex justify-center items-center mr-12 text-white p-3 rounded-xl bg-[#001B3D] text-xs max-sm:p-2 max-sm:mr-7">
+                        <a href="">Voir plus</a>
+                    </div>
+                </div>
+            {% endfor %}
+            </div>
+        </div>
+    </section>
+{% endblock %} 

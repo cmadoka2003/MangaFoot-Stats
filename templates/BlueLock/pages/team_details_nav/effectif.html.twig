@@ -1,0 +1,112 @@
+{% extends 'BlueLock/layout.html.twig' %}
+
+{% block title %}
+	BlueLock - Nom_Joueur | MangaFoot Stats
+{% endblock %}
+
+{% block meta %}
+	<meta name="description" content="Statistiques BlueLock">
+{% endblock %}
+
+{% block js %}
+	<script src={{ asset('js/button.js') }} defer></script>
+{% endblock %}
+
+{% block body %}
+	<section class="details-container bg-[#001B3D] h-[253px] flex flex-row items-center justify-center">
+		<div class="flex flex-row max-md:flex-col items-center w-full max-w-[1440px] text-white max-md:items-start">
+			<div class="w-36 h-44 mr-3">
+				<img src={{ asset('img/Paris_X_Gen.webp') }} alt="logo du Paris X Gen" class="w-full h-full">
+			</div>
+			<p class="text-5xl">Paris X Gen</p>
+		</div>
+	</section>
+
+	<section class="links-container flex flex-col items-center justify-center bg-white">
+		<div class="flex flex-col w-full max-w-[1440px] text-black">
+			<div class="h-[42px] w-full max-w-[1440px] flex items-center  max-sm:h-14 max-sm:flex-wrap">
+				<a class="p-1 mr-5 hover:bg-blue-700 hover:text-white" href="/bluelock/equipes/details">Accueil</a>
+				<a class="p-1 mr-5 hover:bg-blue-700 hover:text-white" href="/bluelock/equipes/details/matchs">Matchs</a>
+				<a class="p-1 mr-5 hover:bg-blue-700 hover:text-white" href="/bluelock/equipes/details/stats">Stats</a>
+				<a class="p-1 mr-5 hover:bg-blue-700 hover:text-white" href="/bluelock/equipes/details/effectif">Effectif</a>
+			</div>
+		</div>
+	</section>
+
+	<hr class="h-1 bg-[#D9D9D9]">
+
+	<section class="matchs-container flex flex-col items-center justify-center bg-white">
+		<div class="flex flex-col w-full max-w-[1440px] text-black">
+			<h1 class="text-3xl py-10">Effectif</h1>
+            <div class="flex flex-col">
+                <div class="gardien-container flex flex-col mb-10">
+                    <h2>Gardiens</h2>
+                    <div class="flex flex-row flex-wrap">
+                        {% for i in 1..gardien %}
+                            <a class="border-2 border-black mr-4 mb-4 max-xl:w-full" href="/bluelock/joueurs/details">
+                                <div class="flex flex-row w-[700px] h-[72px] items-center">
+                                    <p class="p-3">1</p>
+                                    <div class="w-12 h-12 overflow-hidden rounded-full mx-5">
+                                        <img src={{ asset('img/isagi.jpg') }} alt="Isagi Yoichi">
+                                    </div>
+                                    <p>Isagi Yoichi</p>
+                                </div>
+                            </a>
+                        {% endfor %}
+                    </div>
+                </div>
+
+                <div class="defense-container flex flex-col mb-10">
+                    <h2>Défenseurs</h2>
+                    <div class="flex flex-row flex-wrap">
+                        {% for i in 1..defense %}
+                            <a class="border-2 border-black mr-4 mb-4 max-xl :w-full" href="/bluelock/joueurs/details">
+                                <div class="flex flex-row w-[700px] h-[72px] items-center">
+                                    <p class="p-3">1</p>
+                                    <div class="w-12 h-12 overflow-hidden rounded-full mx-5">
+                                        <img src={{ asset('img/isagi.jpg') }} alt="Isagi Yoichi">
+                                    </div>
+                                    <p>Isagi Yoichi</p>
+                                </div>
+                            </a>
+                        {% endfor %}
+                    </div>
+                </div>
+
+                <div class="milieu-container flex flex-col mb-10">
+                    <h2>Millieux</h2>
+                    <div class="flex flex-row flex-wrap">
+                        {% for i in 1..milieu %}
+                            <a class="border-2 border-black mr-4 mb-4 max-xl:w-full" href="/bluelock/joueurs/details">
+                                <div class="flex flex-row w-[700px] h-[72px] items-center">
+                                    <p class="p-3">1</p>
+                                    <div class="w-12 h-12 overflow-hidden rounded-full mx-5">
+                                        <img src={{ asset('img/isagi.jpg') }} alt="Isagi Yoichi">
+                                    </div>
+                                    <p>Isagi Yoichi</p>
+                                </div>
+                            </a>
+                        {% endfor %}
+                    </div>
+                </div>
+
+                <div class="attaquant-container flex flex-col mb-10">
+                    <h2>Attaquants</h2>
+                    <div class="flex flex-row flex-wrap">
+                        {% for i in 1..attaque %}
+                            <a class="border-2 border-black mr-4 mb-4 max-xl:w-full" href="/bluelock/joueurs/details">
+                                <div class="flex flex-row w-[700px] h-[72px] items-center">
+                                    <p class="p-3">1</p>
+                                    <div class="w-12 h-12 overflow-hidden rounded-full mx-5">
+                                        <img src={{ asset('img/isagi.jpg') }} alt="Isagi Yoichi">
+                                    </div>
+                                    <p>Isagi Yoichi</p>
+                                </div>
+                            </a>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+		</div>
+	</section>
+{% endblock %}
