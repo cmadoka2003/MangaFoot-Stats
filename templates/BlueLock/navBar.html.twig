@@ -4,8 +4,14 @@
 			<a href="/connexion"><img class="w-full h-full" src={{ asset('img/logo-MFS.png') }} alt="logo du site MangaFoot Stats"></a>
 		</div>
 		<div class="nav-top-login flex flex-row items-center">
-			<a href="/connexion" class="mr-2 text-xs text-white">Se connecter</a>
-			<img src={{ asset('img/profil.png') }} alt="photo de profil par défault">
+			{% if app.user %}
+				<a href="/profil" class="mr-2 text-xs text-white">{{ app.user.pseudo }}</a>
+				<a href="/deconnexion" class="mr-2 text-xs text-white">Se déconnecter</a>
+				<img src={{ asset('img/profil.png') }} alt="photo de profil par défault">
+			{% else %}
+				<a href="/connexion" class="mr-2 text-xs text-white">Se connecter</a>
+				<img src={{ asset('img/profil.png') }} alt="photo de profil par défault">
+			{% endif %}
 		</div>
 	</div> 
 </div>

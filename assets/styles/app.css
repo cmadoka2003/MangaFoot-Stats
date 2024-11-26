@@ -28,15 +28,43 @@
     }
 }
 
+
+/* barre de navigation*/
 .scrollbar {
     scrollbar-width: thin; /* Barre fine */
     scrollbar-color: #0d4b98 #f0f0f0; /* Pouce bleu, piste grise */
 }
 
-#stats-cles {
-    transition: all 0.3s ease-in-out;
+
+/* formulaire */
+
+.incription-form label, .connexion-form label {
+    font-size: 24px;
 }
 
-.clip-hexagon {
-    clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+.incription-form button, .connexion-form button {
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    position: relative;
+    left: 30%;
+    padding: 10px 70px;
+    border-radius: 30px;
+    border: 1px solid white;
+}
+
+.form-input {
+    width: 552px;
+    height: 30px;
+    color: black;
+}
+
+@media screen and (max-width: 552px) {
+    .form-input {
+        width: 400px;
+    }
+
+    .incription-form button, .connexion-form button {
+        left: 21%;
+    }
 }

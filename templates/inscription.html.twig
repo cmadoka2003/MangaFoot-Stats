@@ -10,27 +10,85 @@
 
 
 {% block body %}
-	<section class="connexion-container flex justify-center items-center bg-[#001B3D] h-screen">
-		<div class="w-full max-w-[1440px] text-white">
-			<div class="flex flex-row justify-center items-center max-xl:flex-col">
-				<div class="w-[552px] h-[320px] max-md:w-[352px] max-md:h-[180px]">
-					<img class="w-full h-full" src={{ asset('img/logo-MFS-xl.png') }} alt="logo MangaFoot Stats">
+	<header>
+		<div class="nav-top-conatainer bg-[#001B3D] flex justify-center">
+			<div class="nav-top flex justify-center align-center w-[1440px] h-[40px]">
+				<div class="flex flex-row items-center">
+					<div class="w-[80px] h-[20px] mr-5">
+						<a href="/bluelock/accueil"><img class="w-full h-full" src={{ asset('img/bluelocklogo.png') }} alt="logo BlueLock"></a>
+					</div>
+					<div class="w-[80px] h-[20px] mr-5">
+						<a href=""><img class="w-full h-full" src={{ asset('img/Aoashi_logo.png') }} alt="logo Aoashi"></a>
+					</div>
+					<div class="w-[80px] h-[20px] mr-5">
+						<a href=""><img class="w-full h-full" src={{ asset('img/Captain_Tsubasa.png') }} alt="logo Captain Tsubasa"></a>
+					</div>
 				</div>
-				<div class="flex flex-col justify-center items-center p-10">
-					<h1 class="text-5xl mb-10 max-md:hidden">Inscription</h1>
-					<form action="" method="POST" class="flex flex-col justify-center items-center">
-						<label for="email" class="text-3xl max-md:text-base">Email</label>
-						<input type="text" id="email" name="email" placeholder="email" class="w-[552px] h-8 mb-10 max-md:w-[250px]">
-						<label for="pseudo" class="text-3xl max-md:text-base">Pseudo</label>
-						<input type="text" id="pseudo" name="pseudo" placeholder="Pseudo" class="w-[552px] h-8 mb-10 max-md:w-[250px]">
-						<label for="password" class="text-3xl max-md:text-base">Mot de passe</label>
-						<input type="password" id="password" name="password" placeholder="Mot de passe" class="w-[552px] h-8 mb-10 max-md:w-[250px]">
-                        <label for="confirmpassword" class="text-3xl max-md:text-base">Confirmer le Mot de passe</label>
-						<input type="password" id="confirmpassword" name="confirmpassword" placeholder="Confirmer le Mot de passe" class="w-[552px] h-8 mb-10 max-md:w-[250px]">
-						<button type="submit" class="border-2 border-white rounded-2xl px-16 py-2 mb-20">Connexion</button>
-					</form>
-				</div>
+				<div class="nav-top-login flex flex-row items-center hover:bg-blue-800 rounded-xl"></div>
 			</div>
 		</div>
-	</section>
+	</header>
+
+	<main>
+		<section class="connexion-container flex justify-center items-center bg-[#001B3D] h-[90%]">
+			<div class="w-full max-w-[1440px] text-white">
+				{% for message in app.flashes('compte-error') %}
+					<div class="message-error text-red-600 flex justify-center items-center">
+						<p>{{message}}</p>
+					</div>
+				{% endfor %}
+
+				{% for message in app.flashes('compte-creation') %}
+					<div class="message-valid text-green-500 flex flex-row justify-center items-center">
+						<p>{{message}}</p>
+						<a href="/connexion" class="ml-5">connectez-vous en cliquant ici</a>
+					</div>
+				{% endfor %}
+				<div class="flex flex-row justify-center items-center max-xl:flex-col">
+					<div class="w-[552px] h-[320px] max-md:w-[352px] max-md:h-[180px]">
+						<img class="w-full h-full" src={{ asset('img/logo-MFS-xl.png') }} alt="logo MangaFoot Stats">
+					</div>
+					<div class="incription-form flex flex-col justify-center items-center p-10">
+						<h1 class="text-5xl mb-10 max-md:hidden">Inscription</h1>
+						{{ form_start(form) }}
+
+						<div class="flex flex-col justify-center items-center mb-5">
+							{{ form_label(form.email) }}
+							{{ form_widget(form.email, {'attr': {'class': 'form-input'}}) }}
+							<div class="error text-red-500 text-xs">
+								{{ form_errors(form.email) }}
+							</div>
+						</div>
+
+						<div class="flex flex-col justify-center items-center mb-5">
+							{{ form_label(form.pseudo) }}
+							{{ form_widget(form.pseudo, {'attr': {'class': 'form-input'}}) }}
+							<div class="error text-red-500 text-xs">
+								{{ form_errors(form.pseudo) }}
+							</div>
+						</div>
+
+						<div class="flex flex-col justify-center items-center mb-5">
+							{{ form_label(form.password.first) }}
+							{{ form_widget(form.password.first, {'attr': {'class': 'form-input'}}) }}
+							<div class="error text-red-500 text-xs">
+								{{ form_errors(form.password.first) }}
+							</div>
+						</div>
+
+						<div class="flex flex-col justify-center items-center mb-5">
+							{{ form_label(form.password.second) }}
+							{{ form_widget(form.password.second, {'attr': {'class': 'form-input'}}) }}
+							<div class="error text-red-500 text-xs">
+								{{ form_errors(form.password.second) }}
+							</div>
+						</div>
+
+						{{ form_end(form) }}
+					</div>
+				</div>
+			</div>
+		</section>
+	</main>
+
 {% endblock %}
