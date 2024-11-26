@@ -4,29 +4,10 @@ namespace App\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
-;
+
 
 class AccueilController extends AbstractController
 {
-    #[Route('/connexion', name: 'connexion')]
-    public function connexion()
-    {
-        return $this->render('connexion.html.twig');
-    }
-
-    #[Route('/inscription', name: 'inscription')]
-    public function inscription()
-    {
-        return $this->render('inscription.html.twig');
-    }
-
-    #[Route('/profil', name: 'profil')]
-    public function profil()
-    {
-        $nombre = 6;
-        return $this->render('profil.html.twig', ["nombres" => $nombre]);
-    }
-
     #[Route('/bluelock/accueil', name: 'accueil')]
     public function accueil()
     {

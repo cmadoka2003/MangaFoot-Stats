@@ -15,11 +15,11 @@
 
 {% block body %}
 	<section class="info-container p-7 flex flex-col justify-center items-center bg-white">
-		<div class="w-full max-w-[1440px] flex flex-row max-md:flex-col justify-center items-center">
-			<div class="w-[655px] h-[294px] max-md:w-[400px]">
+		<div class="w-full max-w-[1440px] flex flex-row max-lg:flex-col justify-center items-center">
+			<div class="w-[600px] h-[350px] max-md:w-[400px] max-md:h-[250px]">
 				<img src={{ asset('img/blue-lock-wallpaper.jpg') }} alt="Wallpaper BlueLock" class="w-full h-full">
 			</div>
-			<div class="w-[655px] p-5 max-md:w-[400px]">
+			<div class="w-full max-w-[600px] p-5">
 				<h1 class="text-2xl">Synopsis</h1>
 				<p class="text-xs">
 					"Blue Lock" est une aventure sportive captivante qui explore l’essence du football sous un angle unique. Voici les quatre piliers principaux de cette histoire :
@@ -43,8 +43,8 @@
 			</div>
 		</div>
 
-		<div class="w-full max-w-[1440px] flex flex-row justify-center items-center max-md:flex-col">
-			<div class="w-[655px] h-[294px] mt-32 flex flex-col max-md:w-[400px]">
+		<div class="w-full max-w-[1440px] flex flex-row justify-center items-center max-lg:flex-col mt-10">
+			<div class="w-[600px] flex flex-col max-md:w-[400px] max-lg:order-2">
 				<h2 class="text-2xl">Où retrouver BlueLock ?</h2>
 				<div>
 					<p class="text-xs mb-2">
@@ -60,30 +60,37 @@
 					<a class="bg-yellow-500 hover:bg-yellow-400 text-white font-bold py-2 px-4 rounded" href="https://www.fnac.com/se86940/Blue-Lock" target="_blank">Fnac</a>
 				</div>
 			</div>
-			<div class="w-[655px] h-[294px] max-md:w-[400px]">
+			<div class="w-[600px] h-[350px] max-md:w-[400px] max-md:h-[250px]">
 				<img src={{ asset('img/isagi-yoichi-wallpaper.webp') }} alt="Wallpaper Isagi Yoichi" class="w-full h-full">
 			</div>
 		</div>
 
-		<div class="w-full max-w-[1440px] flex flex-row justify-center items-center">
-			<div>
-				<h2 class="text-2xl">Pourquoi ce site</h2>
-				<p class="text-xs">
-					Créer un site de statistiques sur Blue Lock repose sur plusieurs motivations principales. 
-																									Avant tout, c’est l’envie de partager une passion pour cet univers unique qui me pousse à développer un site dédiée. 
-																									Blue Lock, en mêlant football, psychologie et compétition, offre une richesse de contenu qui mérite d’être explorée en profondeur. 
-																									Le site devient alors un espace où les fans peuvent se rassembler, découvrir de nouvelles analyses, et échanger autour de données chiffrées qui mettent en lumière les performances et les évolutions des personnages.
-					<br><br>
-					Un tel projet permet également d’approfondir les connaissances sur le manga et son univers. 
-																					En examinant de près les statistiques des joueurs, leurs performances dans les matchs, et les dynamiques du programme Blue Lock, le site peut offrir des insights captivants.
-																					Ce processus encourage non seulement une lecture plus attentive mais aussi une compréhension plus analytique de l’œuvre. 
-																					Les fans peuvent ainsi explorer des éléments souvent implicites ou peu détaillés dans le récit, enrichissant leur expérience globale.
-					<br><br>
-					<strong class="text-base">Enfin, il est essentiel de noter que les statistiques présentées sur le site ne sont pas toujours des vérités absolues. 
-																Étant donné que certaines informations dans Blue Lock restent subjectives ou ouvertes à interprétation, les données peuvent varier et ne pas refléter une précision à 100 %.
-					</strong>
-				</p>
+		<div class="w-full max-w-[1440px] flex flex-col justify-center items-center mt-10">
+			<h2 class="text-2xl mb-5">Pourquoi ce site ?</h2>
+			<div class="text-xs flex flex-row mb-10 justify-center items-center max-lg:flex-col">
+				<div class="w-full max-w-[600px] max-lg:mb-10">
+					<p>
+						Si je pouvais décrire mon application en une phrase :
+						<br>
+						Mon application est un espace dédié aux fans de Blue Lock, où ils peuvent consulter et mettre en favori les statistiques de leurs joueurs et équipes préférés, 
+												noter les performances des joueurs match par match, voter pour le MVP de chaque saison, et approfondir leurs connaissances sur l'univers de Blue Lock.
+					</p>
+				</div>
+				<div class="w-full max-w-[600px]">
+					<p>
+						J’ai choisi de créer un site de statistiques sur Blue Lock parce que de nombreux fans du manga recherchent régulièrement des informations détaillées sur les joueurs, 
+												les équipes, les matchs ou les saisons. Cependant, ces données sont souvent dispersées sur des plateformes comme X (anciennement Twitter) ou Reddit, rendant leur recherche difficile et peu efficace. 
+												Mon site vise à résoudre ce problème en centralisant toutes les statistiques dans un espace dédié, accessible et bien organisé, 
+												permettant ainsi aux fans d’atteindre facilement leurs objectifs et de plonger encore plus profondément dans l’univers de Blue Lock.
+					</p>
+				</div>
+				
 			</div>
+			<p class="w-full max-w-[1200px]">
+				<strong class="text-base">Enfin, il est essentiel de noter que les statistiques présentées sur le site ne sont pas toujours des vérités absolues. 
+										Étant donné que certaines informations dans Blue Lock restent subjectives ou ouvertes à interprétation, les données peuvent varier et ne pas refléter une précision à 100 %.
+				</strong>
+			</p>
 		</div>
 	</section>
 {% endblock %}

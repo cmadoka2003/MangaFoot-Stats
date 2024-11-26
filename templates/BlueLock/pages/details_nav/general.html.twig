@@ -58,8 +58,8 @@
 	<hr class="h-1 bg-[#D9D9D9]">
 	<section class="flex items-center justify-center bg-white">
         <div class="flex flex-col w-full max-w-[1440px] text-black">
-			<div class="flex flex-row items-center justify-center p-5">
-                <div class="flex flex-col bg-[#001B3D] text-white rounded-lg p-10">
+			<div class="flex flex-row items-center justify-center p-5 max-lg:flex-col">
+                <div class="flex flex-col bg-[#001B3D] text-white rounded-lg p-10 max-lg:order-2">
                     <div class="flex flex-col items-center justify-center">
                         <h1 class="text-3xl">General</h1>
                         <p class="text-3xl">88</p>
@@ -91,7 +91,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="w-[600px] h-[600px]">
+                <div class="w-full h-full max-w-[600px] max-h-[600px] ">
                     <img class="w-full h-full" src={{ asset('img/overall/isagi.png') }} alt="isagi overall">
                 </div>
             </div>

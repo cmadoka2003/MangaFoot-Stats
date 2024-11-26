@@ -9,6 +9,7 @@
 /vendor/
 /migrations/
 .env
+/node_modules/
 ###< symfony/framework-bundle ###
 
 ###> symfony/asset-mapper ###
