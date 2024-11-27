@@ -3,6 +3,7 @@
 namespace App\Entity;
 
 use App\Repository\StatisticsRepository;
+use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
 
 #[ORM\Entity(repositoryClass: StatisticsRepository::class)]
@@ -87,6 +88,30 @@ class Statistics
 
     #[ORM\Column(type: 'integer', name: 'goal_conceded')]
     private ?int $goalConceded;
+
+    #[ORM\ManyToOne(targetEntity: Matchs::class, inversedBy: "statistics")]
+    #[ORM\JoinColumn(name: 'match_id', referencedColumnName: 'match_id', nullable: false)]
+    private $matchId;
+
+    #[ORM\ManyToOne(targetEntity: Player::class, inversedBy: "statistics")]
+    #[ORM\JoinColumn(name: 'player_id', referencedColumnName: 'player_id', nullable: false)]
+    private $playerId;
+
+    #[ORM\ManyToOne(targetEntity: Teams::class, inversedBy: "statistics")]
+    #[ORM\JoinColumn(name: 'team_id', referencedColumnName: 'team_id', nullable: false)]
+    private $teamId;
+
+    #[ORM\OneToMany(
+        targetEntity: Rating::class,
+        mappedBy: "statisticsId",
+        cascade: ['persist', 'remove']
+    )]
+    private $rating;
+
+    public function __construct()
+    {
+        $this->rating = new ArrayCollection();
+    }
 
     public function getId()
     {
@@ -389,6 +414,53 @@ class Statistics
     public function setGoalConceded($goalConceded)
     {
         $this->goalConceded = $goalConceded;
+
+        return $this;
+    }
+
+    public function getRating()
+    {
+        return $this->rating;
+    }
+
+    public function addRating(Rating $rating)
+    {
+        $rating->setStatisticsId($this);
+        $this->rating->add($rating);
+    }
+
+    public function getMatchId()
+    {
+        return $this->matchId;
+    }
+
+    public function setMatchId(Matchs $matchId)
+    {
+        $this->matchId = $matchId;
+
+        return $this;
+    }
+
+    public function getPlayerId()
+    {
+        return $this->playerId;
+    }
+
+    public function setPlayerId(Player $playerId)
+    {
+        $this->playerId = $playerId;
+
+        return $this;
+    }
+
+    public function getTeamId()
+    {
+        return $this->teamId;
+    }
+
+    public function setTeamId(Teams $teamId)
+    {
+        $this->teamId = $teamId;
 
         return $this;
     }

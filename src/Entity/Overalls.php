@@ -35,6 +35,10 @@ class Overalls
     private ?int $defend;
     
 
+    #[ORM\ManyToOne(targetEntity: Player::class, inversedBy: "overall")]
+    #[ORM\JoinColumn(name: 'player_id', referencedColumnName: 'player_id', nullable: false)]
+    private $playerId;
+
     public function getId()
     {
         return $this->id;
@@ -120,6 +124,18 @@ class Overalls
     public function setDefend($defend)
     {
         $this->defend = $defend;
+
+        return $this;
+    }
+
+    public function getPlayerId()
+    {
+        return $this->playerId;
+    }
+
+    public function setPlayerId(Player $playerId)
+    {
+        $this->playerId = $playerId;
 
         return $this;
     }

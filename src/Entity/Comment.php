@@ -16,6 +16,10 @@ class Comment
     #[ORM\Column(type: 'text')]
     private ?string $message;
 
+    #[ORM\ManyToOne(targetEntity: User::class, inversedBy: "comment")]
+    #[ORM\JoinColumn(name: 'user_id', referencedColumnName: 'user_id', nullable: false)]
+    private $userId;
+
     public function getId()
     {
         return $this->id;
@@ -29,6 +33,18 @@ class Comment
     public function setMessage($message)
     {
         $this->message = $message;
+
+        return $this;
+    }
+
+    public function getUserId()
+    {
+        return $this->userId;
+    }
+
+    public function setUserId(User $userId)
+    {
+        $this->userId = $userId;
 
         return $this;
     }
