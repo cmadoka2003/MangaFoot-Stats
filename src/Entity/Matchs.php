@@ -127,4 +127,14 @@ class Matchs
         $statistics->setMatchId($this);
         $this->statistics->add($statistics);
     }
+    public function getGoalAssist()
+    {
+        return $this->goalAssist;
+    }
+
+    public function addGoalAssist(GoalsAssists $goalAssist)
+    {
+        $goalAssist->setMatchId($this);
+        $this->goalAssist->add($goalAssist);
+    }
 }
