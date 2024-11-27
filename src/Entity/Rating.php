@@ -14,7 +14,15 @@ class Rating
     private ?int $id;
 
     #[ORM\Column(type: 'integer')]
-    private ?string $rating;
+    private ?int $rating;
+
+    #[ORM\ManyToOne(targetEntity: User::class, inversedBy: "rating")]
+    #[ORM\JoinColumn(name: 'user_id', referencedColumnName: 'user_id', nullable: false)]
+    private $userId;
+
+    #[ORM\ManyToOne(targetEntity: Statistics::class, inversedBy: "rating")]
+    #[ORM\JoinColumn(name: 'statistics_id', referencedColumnName: 'statistics_id', nullable: false)]
+    private $statisticsId;
 
     public function getId()
     {
@@ -29,6 +37,30 @@ class Rating
     public function setRating($rating)
     {
         $this->rating = $rating;
+
+        return $this;
+    }
+
+    public function getUserId()
+    {
+        return $this->userId;
+    }
+
+    public function setUserId(User $userId)
+    {
+        $this->userId = $userId;
+
+        return $this;
+    }
+
+    public function getStatisticsId()
+    {
+        return $this->statisticsId;
+    }
+
+    public function setStatisticsId(Statistics $statisticsId)
+    {
+        $this->statisticsId = $statisticsId;
 
         return $this;
     }

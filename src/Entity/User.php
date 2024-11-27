@@ -3,6 +3,7 @@
 namespace App\Entity;
 
 use App\Repository\UserRepository;
+use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Security\Core\User\PasswordAuthenticatedUserInterface;
 use Symfony\Component\Security\Core\User\UserInterface;
@@ -26,6 +27,34 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
 
     #[ORM\Column(type: 'json')]
     private array $roles = [];
+
+    #[ORM\OneToMany(
+        targetEntity: Favorite::class,
+        mappedBy: "userId",
+        cascade: ['persist', 'remove']
+    )]
+    private $favorite;
+
+    #[ORM\OneToMany(
+        targetEntity: Comment::class,
+        mappedBy: "userId",
+        cascade: ['persist', 'remove']
+    )]
+    private $comment;
+
+    #[ORM\OneToMany(
+        targetEntity: Rating::class,
+        mappedBy: "userId",
+        cascade: ['persist', 'remove']
+    )]
+    private $rating;
+
+    public function __construct()
+    {
+        $this->favorite = new ArrayCollection();
+        $this->comment = new ArrayCollection();
+        $this->rating = new ArrayCollection();
+    }
 
     public function getId()
     {
@@ -83,5 +112,38 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
         $roles[] = 'ROLE_USER';
     
         return array_unique($roles);
+    }
+
+    public function getFavorite()
+    {
+        return $this->favorite;
+    }
+
+    public function addFavorite(Favorite $favorite)
+    {
+        $favorite->setUserId($this);
+        $this->favorite->add($favorite);
+    }
+
+    public function getComment()
+    {
+        return $this->comment;
+    }
+
+    public function addComment(Comment $comment)
+    {
+        $comment->setUserId($this);
+        $this->comment->add($comment);
+    }
+
+    public function getRating()
+    {
+        return $this->rating;
+    }
+
+    public function addRating(Rating $rating)
+    {
+        $rating->setUserId($this);
+        $this->rating->add($rating);
     }
 }
