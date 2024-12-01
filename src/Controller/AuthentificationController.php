@@ -16,7 +16,7 @@ use Symfony\Component\Security\Http\Authentication\AuthenticationUtils;
 
 class AuthentificationController extends AbstractController
 {
-    #[Route('/connexion', name: 'app_login')]
+    #[Route('/', name: 'app_login')]
     public function connexion(Request $request, AuthenticationUtils $authenticationUtils): Response
     {
         if ($this->isGranted('IS_AUTHENTICATED_FULLY')) {
