@@ -33,7 +33,7 @@ class Player
     private ?string $height;
 
     #[ORM\Column(type: 'string')]
-    private ?string $position_favorite;
+    private ?string $positionFavorite;
 
     #[ORM\Column(type: 'string')]
     private ?string $country;
@@ -156,14 +156,14 @@ class Player
         return $this;
     }
 
-    public function getPosition_favorite()
+    public function getPositionFavorite()
     {
-        return $this->position_favorite;
+        return $this->positionFavorite;
     }
 
-    public function setPosition_favorite($position_favorite)
+    public function setPositionFavorite($positionFavorite)
     {
-        $this->position_favorite = $position_favorite;
+        $this->positionFavorite = $positionFavorite;
 
         return $this;
     }

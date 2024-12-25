@@ -29,6 +29,9 @@ class GoalsAssists
     #[ORM\JoinColumn(name: 'assist_id', referencedColumnName: 'player_id')]
     private $assistId;
 
+    #[ORM\ManyToOne(targetEntity: Arcs::class, inversedBy: "goalsAssists")]
+    #[ORM\JoinColumn(name: 'arc_id', referencedColumnName: 'arc_id', nullable: false)]
+    private $arcs;
 
     public function getId()
     {
@@ -79,6 +82,18 @@ class GoalsAssists
     public function setAssistId(Player $assistId)
     {
         $this->assistId = $assistId;
+
+        return $this;
+    }
+
+    public function getArcs()
+    {
+        return $this->arcs;
+    }
+
+    public function setArcs(Arcs $arcs)
+    {
+        $this->arcs = $arcs;
 
         return $this;
     }

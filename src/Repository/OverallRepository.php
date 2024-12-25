@@ -2,7 +2,7 @@
 
 namespace App\Repository;
 
-use App\Entity\Overall;
+use App\Entity\Overalls;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Persistence\ManagerRegistry;
 
@@ -10,10 +10,10 @@ class OverallRepository extends ServiceEntityRepository
 {
     public function __construct(ManagerRegistry $registry)
     {
-        parent::__construct($registry, Overall::class);
+        parent::__construct($registry, Overalls::class);
     }
 
-    public function save(Overall $new, ?bool $isSave = false)
+    public function save(Overalls $new, ?bool $isSave = false)
     {
         $this->getEntityManager()->persist($new);
 

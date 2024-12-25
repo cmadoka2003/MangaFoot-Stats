@@ -1,0 +1,11 @@
+<!DOCTYPE html>
+
+<title>New Matchs</title>
+
+{% block body %}
+    <h1>Create new Matchs</h1>
+
+    {{ include('admin/matchs/_form.html.twig') }}
+
+    <a href="{{ path('app_matchs_index') }}">back to list</a>
+{% endblock %}

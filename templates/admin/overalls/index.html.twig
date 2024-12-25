@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+
+<title>Overalls index</title>
+
+{% block body %}
+    <h1>Overalls index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Total</th>
+                <th>Speed</th>
+                <th>Offense</th>
+                <th>Shoot</th>
+                <th>Dribble</th>
+                <th>Pass</th>
+                <th>Defend</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for overall in overalls %}
+            <tr>
+                <td>{{ overall.id }}</td>
+                <td>{{ overall.total }}</td>
+                <td>{{ overall.speed }}</td>
+                <td>{{ overall.offense }}</td>
+                <td>{{ overall.shoot }}</td>
+                <td>{{ overall.dribble }}</td>
+                <td>{{ overall.pass }}</td>
+                <td>{{ overall.defend }}</td>
+                <td>
+                    <a href="{{ path('app_overalls_show', {'id': overall.id}) }}">show</a>
+                    <a href="{{ path('app_overalls_edit', {'id': overall.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="9">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_overalls_new') }}">Create new</a>
+{% endblock %}

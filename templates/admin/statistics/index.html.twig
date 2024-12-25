@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+
+<title>Statistics index</title>
+
+{% block body %}
+    <h1>Statistics index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Goalkeeper</th>
+                <th>ShotsOnTarget</th>
+                <th>ShotsOffTarget</th>
+                <th>BlockedShots</th>
+                <th>Touches</th>
+                <th>PassAttempts</th>
+                <th>SussessfulPasses</th>
+                <th>DribbleAttempts</th>
+                <th>SussessfulDribbles</th>
+                <th>CrosseAttempts</th>
+                <th>SussessfulCrosses</th>
+                <th>TackleAttempts</th>
+                <th>SussessfulTackles</th>
+                <th>AerialDuels</th>
+                <th>PossessionLost</th>
+                <th>Clearences</th>
+                <th>Interceptions</th>
+                <th>DribbledPast</th>
+                <th>Fouls</th>
+                <th>YellowCards</th>
+                <th>RedCards</th>
+                <th>Punches</th>
+                <th>Saves</th>
+                <th>SavesFromInsideBox</th>
+                <th>GoalConceded</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for statistic in statistics %}
+            <tr>
+                <td>{{ statistic.id }}</td>
+                <td>{{ statistic.goalkeeper ? 'Yes' : 'No' }}</td>
+                <td>{{ statistic.shotsOnTarget }}</td>
+                <td>{{ statistic.shotsOffTarget }}</td>
+                <td>{{ statistic.blockedShots }}</td>
+                <td>{{ statistic.touches }}</td>
+                <td>{{ statistic.passAttempts }}</td>
+                <td>{{ statistic.sussessfulPasses }}</td>
+                <td>{{ statistic.dribbleAttempts }}</td>
+                <td>{{ statistic.sussessfulDribbles }}</td>
+                <td>{{ statistic.crosseAttempts }}</td>
+                <td>{{ statistic.sussessfulCrosses }}</td>
+                <td>{{ statistic.tackleAttempts }}</td>
+                <td>{{ statistic.sussessfulTackles }}</td>
+                <td>{{ statistic.aerialDuels }}</td>
+                <td>{{ statistic.possessionLost }}</td>
+                <td>{{ statistic.clearences }}</td>
+                <td>{{ statistic.interceptions }}</td>
+                <td>{{ statistic.dribbledPast }}</td>
+                <td>{{ statistic.fouls }}</td>
+                <td>{{ statistic.yellowCards }}</td>
+                <td>{{ statistic.redCards }}</td>
+                <td>{{ statistic.punches }}</td>
+                <td>{{ statistic.saves }}</td>
+                <td>{{ statistic.savesFromInsideBox }}</td>
+                <td>{{ statistic.goalConceded }}</td>
+                <td>
+                    <a href="{{ path('app_statistics_show', {'id': statistic.id}) }}">show</a>
+                    <a href="{{ path('app_statistics_edit', {'id': statistic.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="27">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_statistics_new') }}">Create new</a>
+{% endblock %}

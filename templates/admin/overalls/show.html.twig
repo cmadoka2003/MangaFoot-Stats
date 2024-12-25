@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+
+<title>Overalls</title>
+
+{% block body %}
+    <h1>Overalls</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ overall.id }}</td>
+            </tr>
+            <tr>
+                <th>Total</th>
+                <td>{{ overall.total }}</td>
+            </tr>
+            <tr>
+                <th>Speed</th>
+                <td>{{ overall.speed }}</td>
+            </tr>
+            <tr>
+                <th>Offense</th>
+                <td>{{ overall.offense }}</td>
+            </tr>
+            <tr>
+                <th>Shoot</th>
+                <td>{{ overall.shoot }}</td>
+            </tr>
+            <tr>
+                <th>Dribble</th>
+                <td>{{ overall.dribble }}</td>
+            </tr>
+            <tr>
+                <th>Pass</th>
+                <td>{{ overall.pass }}</td>
+            </tr>
+            <tr>
+                <th>Defend</th>
+                <td>{{ overall.defend }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_overalls_index') }}">back to list</a>
+
+    <a href="{{ path('app_overalls_edit', {'id': overall.id}) }}">edit</a>
+
+    {{ include('admin/overalls/_delete_form.html.twig') }}
+{% endblock %}

@@ -16,6 +16,9 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     #[ORM\Column(name: 'user_id')]
     private ?int $id;
 
+    #[ORM\Column(type: 'string', nullable: true)]
+    private ?string $avatar = null;
+
     #[ORM\Column(type: 'string', length: 50)]
     private ?string $pseudo;
 
@@ -145,5 +148,17 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     {
         $rating->setUserId($this);
         $this->rating->add($rating);
+    }
+
+    public function getAvatar()
+    {
+        return $this->avatar;
+    }
+
+    public function setAvatar($avatar)
+    {
+        $this->avatar = $avatar;
+
+        return $this;
     }
 }

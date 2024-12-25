@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+
+<title>Statistics</title>
+
+{% block body %}
+    <h1>Statistics</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ statistic.id }}</td>
+            </tr>
+            <tr>
+                <th>Goalkeeper</th>
+                <td>{{ statistic.goalkeeper ? 'Yes' : 'No' }}</td>
+            </tr>
+            <tr>
+                <th>ShotsOnTarget</th>
+                <td>{{ statistic.shotsOnTarget }}</td>
+            </tr>
+            <tr>
+                <th>ShotsOffTarget</th>
+                <td>{{ statistic.shotsOffTarget }}</td>
+            </tr>
+            <tr>
+                <th>BlockedShots</th>
+                <td>{{ statistic.blockedShots }}</td>
+            </tr>
+            <tr>
+                <th>Touches</th>
+                <td>{{ statistic.touches }}</td>
+            </tr>
+            <tr>
+                <th>PassAttempts</th>
+                <td>{{ statistic.passAttempts }}</td>
+            </tr>
+            <tr>
+                <th>SussessfulPasses</th>
+                <td>{{ statistic.sussessfulPasses }}</td>
+            </tr>
+            <tr>
+                <th>DribbleAttempts</th>
+                <td>{{ statistic.dribbleAttempts }}</td>
+            </tr>
+            <tr>
+                <th>SussessfulDribbles</th>
+                <td>{{ statistic.sussessfulDribbles }}</td>
+            </tr>
+            <tr>
+                <th>CrosseAttempts</th>
+                <td>{{ statistic.crosseAttempts }}</td>
+            </tr>
+            <tr>
+                <th>SussessfulCrosses</th>
+                <td>{{ statistic.sussessfulCrosses }}</td>
+            </tr>
+            <tr>
+                <th>TackleAttempts</th>
+                <td>{{ statistic.tackleAttempts }}</td>
+            </tr>
+            <tr>
+                <th>SussessfulTackles</th>
+                <td>{{ statistic.sussessfulTackles }}</td>
+            </tr>
+            <tr>
+                <th>AerialDuels</th>
+                <td>{{ statistic.aerialDuels }}</td>
+            </tr>
+            <tr>
+                <th>PossessionLost</th>
+                <td>{{ statistic.possessionLost }}</td>
+            </tr>
+            <tr>
+                <th>Clearences</th>
+                <td>{{ statistic.clearences }}</td>
+            </tr>
+            <tr>
+                <th>Interceptions</th>
+                <td>{{ statistic.interceptions }}</td>
+            </tr>
+            <tr>
+                <th>DribbledPast</th>
+                <td>{{ statistic.dribbledPast }}</td>
+            </tr>
+            <tr>
+                <th>Fouls</th>
+                <td>{{ statistic.fouls }}</td>
+            </tr>
+            <tr>
+                <th>YellowCards</th>
+                <td>{{ statistic.yellowCards }}</td>
+            </tr>
+            <tr>
+                <th>RedCards</th>
+                <td>{{ statistic.redCards }}</td>
+            </tr>
+            <tr>
+                <th>Punches</th>
+                <td>{{ statistic.punches }}</td>
+            </tr>
+            <tr>
+                <th>Saves</th>
+                <td>{{ statistic.saves }}</td>
+            </tr>
+            <tr>
+                <th>SavesFromInsideBox</th>
+                <td>{{ statistic.savesFromInsideBox }}</td>
+            </tr>
+            <tr>
+                <th>GoalConceded</th>
+                <td>{{ statistic.goalConceded }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_statistics_index') }}">back to list</a>
+
+    <a href="{{ path('app_statistics_edit', {'id': statistic.id}) }}">edit</a>
+
+    {{ include('admin/statistics/_delete_form.html.twig') }}
+{% endblock %}
