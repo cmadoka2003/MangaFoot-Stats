@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+
+<title>Teams</title>
+
+{% block body %}
+    <h1>Teams</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ team.id }}</td>
+            </tr>
+            <tr>
+                <th>Name</th>
+                <td>{{ team.name }}</td>
+            </tr>
+            <tr>
+                <th>Country</th>
+                <td>{{ team.country }}</td>
+            </tr>
+            <tr>
+                <th>Tactics</th>
+                <td>{{ team.tactics }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <img src="{{ asset('uploads/logos/'~team.logo) }}" alt="logo du club">
+
+    <a href="{{ path('app_teams_index') }}">back to list</a>
+
+    <a href="{{ path('app_teams_edit', {'id': team.id}) }}">edit</a>
+
+    {{ include('admin/teams/_delete_form.html.twig') }}
+{% endblock %}

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+
+<title>PlayersTeam</title>
+
+{% block body %}
+    <h1>PlayersTeam</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ players_team.id }}</td>
+            </tr>
+            <tr>
+                <th>PlayerPosition</th>
+                <td>{{ players_team.playerPosition }}</td>
+            </tr>
+            <tr>
+                <th>Actif</th>
+                <td>{{ players_team.actif ? 'Yes' : 'No' }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_players_team_index') }}">back to list</a>
+
+    <a href="{{ path('app_players_team_edit', {'id': players_team.id}) }}">edit</a>
+
+    {{ include('admin/players_team/_delete_form.html.twig') }}
+{% endblock %}

@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+
+<title>Edit Rating</title>
+
+{% block body %}
+    <h1>Edit Rating</h1>
+
+    {{ include('admin/rating/_form.html.twig', {'button_label': 'Update'}) }}
+
+    <a href="{{ path('app_rating_index') }}">back to list</a>
+
+    {{ include('admin/rating/_delete_form.html.twig') }}
+{% endblock %}

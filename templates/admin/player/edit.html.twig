@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+
+<title>Edit Player</title>
+
+{% block body %}
+    <h1>Edit Player</h1>
+
+    {{ include('admin/player/_form.html.twig', {'button_label': 'Update'}) }}
+
+    <a href="{{ path('app_player_index') }}">back to list</a>
+
+    {{ include('admin/player/_delete_form.html.twig') }}
+{% endblock %}

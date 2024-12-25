@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+
+<title>GoalsAssists index</title>
+
+{% block body %}
+    <h1>GoalsAssists index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for goals_assist in goals_assists %}
+            <tr>
+                <td>{{ goals_assist.id }}</td>
+                <td>
+                    <a href="{{ path('app_goals_assists_show', {'id': goals_assist.id}) }}">show</a>
+                    <a href="{{ path('app_goals_assists_edit', {'id': goals_assist.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="2">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_goals_assists_new') }}">Create new</a>
+{% endblock %}

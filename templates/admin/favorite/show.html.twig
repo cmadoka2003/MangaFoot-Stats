@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+
+<title>Favorite</title>
+
+{% block body %}
+    <h1>Favorite</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ favorite.id }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_favorite_index') }}">back to list</a>
+
+    <a href="{{ path('app_favorite_edit', {'id': favorite.id}) }}">edit</a>
+
+    {{ include('admin/favorite/_delete_form.html.twig') }}
+{% endblock %}

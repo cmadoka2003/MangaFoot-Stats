@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+
+<title>Player</title>
+
+{% block body %}
+    <h1>Player</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ player.id }}</td>
+            </tr>
+            <tr>
+                <th>Avatar</th>
+                <td>{{ player.avatar }}</td>
+            </tr>
+            <tr>
+                <th>Firstname</th>
+                <td>{{ player.firstname }}</td>
+            </tr>
+            <tr>
+                <th>Lastname</th>
+                <td>{{ player.lastname }}</td>
+            </tr>
+            <tr>
+                <th>Age</th>
+                <td>{{ player.age }}</td>
+            </tr>
+            <tr>
+                <th>Birthdate</th>
+                <td>{{ player.birthdate }}</td>
+            </tr>
+            <tr>
+                <th>Height</th>
+                <td>{{ player.height }}</td>
+            </tr>
+            <tr>
+                <th>Position_favorite</th>
+                <td>{{ player.positionFavorite }}</td>
+            </tr>
+            <tr>
+                <th>Country</th>
+                <td>{{ player.country }}</td>
+            </tr>
+            <tr>
+                <th>Number</th>
+                <td>{{ player.number }}</td>
+            </tr>
+        </tbody>
+    </table>
+    
+    <img src="{{ asset('uploads/players/'~player.avatar) }}" alt="avatar du joueur">
+
+    <a href="{{ path('app_player_index') }}">back to list</a>
+
+    <a href="{{ path('app_player_edit', {'id': player.id}) }}">edit</a>
+
+    {{ include('admin/player/_delete_form.html.twig') }}
+{% endblock %}

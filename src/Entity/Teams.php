@@ -68,6 +68,10 @@ class Teams
     )]
     private $goalAssist;
 
+    #[ORM\ManyToOne(targetEntity: Arcs::class, inversedBy: "teams")]
+    #[ORM\JoinColumn(name: 'arc_id', referencedColumnName: 'arc_id', nullable: false)]
+    private $arcs;  
+
     public function __construct()
     {
         $this->teamHome = new ArrayCollection();
@@ -195,5 +199,17 @@ class Teams
     {
         $goalAssist->setTeamId($this);
         $this->goalAssist->add($goalAssist);
+    }
+
+    public function getArcs()
+    {
+        return $this->arcs;
+    }
+
+    public function setArcs($arcs)
+    {
+        $this->arcs = $arcs;
+
+        return $this;
     }
 }

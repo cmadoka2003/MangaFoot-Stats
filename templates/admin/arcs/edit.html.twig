@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+
+<title>Edit Arcs</title>
+
+{% block body %}
+    <h1>Edit Arcs</h1>
+
+    {{ include('admin/arcs/_form.html.twig', {'button_label': 'Update'}) }}
+
+    <a href="{{ path('app_arcs_index') }}">back to list</a>
+
+    {{ include('admin/arcs/_delete_form.html.twig') }}
+{% endblock %}

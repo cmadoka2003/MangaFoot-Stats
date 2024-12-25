@@ -101,6 +101,10 @@ class Statistics
     #[ORM\JoinColumn(name: 'team_id', referencedColumnName: 'team_id', nullable: false)]
     private $teamId;
 
+    #[ORM\ManyToOne(targetEntity: Arcs::class, inversedBy: "statistics")]
+    #[ORM\JoinColumn(name: 'arc_id', referencedColumnName: 'arc_id', nullable: false)]
+    private $arcs;
+
     #[ORM\OneToMany(
         targetEntity: Rating::class,
         mappedBy: "statisticsId",
@@ -461,6 +465,18 @@ class Statistics
     public function setTeamId(Teams $teamId)
     {
         $this->teamId = $teamId;
+
+        return $this;
+    }
+
+    public function getArcs()
+    {
+        return $this->arcs;
+    }
+
+    public function setArcs(Arcs $arcs)
+    {
+        $this->arcs = $arcs;
 
         return $this;
     }
